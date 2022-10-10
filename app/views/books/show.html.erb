@@ -1,0 +1,31 @@
+<div class="text-">
+  <%= flash[:notice] %>
+</div>
+
+<%= render 'userinfo', book: @book_new,user: @user %>
+<h2>Book detail</h2>
+
+<table>
+
+  <tr>
+    <td>
+      <%= link_to user_path(@book.user_id) do %>
+        <% if @book.user.image.attached? %>
+          <%= image_tag @book.user.image, size: "100x100" %>
+        <% else %>
+          <%= image_tag 'no_image', size: "100x100" %>
+        <% end %><br>
+        <%= @book.user.name %>
+      <% end %>
+    </td>
+    <td><%= link_to @book.title, book_path(@book.id) %></td>
+    <td><%= @book.body %></td>
+
+    <% if @book.user == current_user %>
+      <td><%= link_to "Edit", edit_book_path(@book.id), class: " btn btn-success" %>
+      </td>
+      <td><%= link_to "Destroy", book_path(@book.id), method: :'delete', "data-confirm" => "本当に消しますか?", class: "btn btn-danger" %>
+      </td>
+    <% end %>
+  </tr>
+</table>
