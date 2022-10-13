@@ -45,7 +45,7 @@
                 <li class="list-unstyled">
                   <%= link_to(destroy_user_session_path, method: :delete, class: 'text-white mr-3') do %>
                     <i class="fas fa-sign-out-alt"></i>
-                    Log out
+                    logout
                   <% end %>
                 </li>
               <% else %>
@@ -64,13 +64,13 @@
                 <li class="list-unstyled">
                   <%= link_to(new_user_registration_path, class: 'text-white mr-3') do %>
                     <i class="fas fa-user-plus"></i>
-                    Sign up
+                    sign up
                   <% end %>
                 </li>
                 <li class="list-unstyled">
                   <%= link_to(new_user_session_path, class: 'text-white mr-3 mr-3') do %>
                     <i class="fas fa-sign-in-alt"></i>
-                    Log in
+                    login
                   <% end %>
                 </li>
               <% end %>
